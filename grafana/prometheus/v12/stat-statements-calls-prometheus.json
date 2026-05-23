@@ -2,6 +2,18 @@
   "annotations": {
     "list": [
       {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
         "builtIn": 1,
         "datasource": {
           "type": "datasource",
@@ -38,7 +50,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Total queries per second across all databases",
       "fieldConfig": {
@@ -135,7 +147,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Current QPS summary",
       "fieldConfig": {
@@ -222,7 +234,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Most frequently called queries",
       "fieldConfig": {
@@ -397,7 +409,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Query call rate trends over time",
       "fieldConfig": {
@@ -493,7 +505,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Query call distribution by database",
       "fieldConfig": {
@@ -573,7 +585,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Queries with unusually high call counts but low total time",
       "fieldConfig": {

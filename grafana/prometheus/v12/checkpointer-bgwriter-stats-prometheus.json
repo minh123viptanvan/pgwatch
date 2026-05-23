@@ -2,6 +2,18 @@
   "annotations": {
     "list": [
       {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
         "builtIn": 1,
         "datasource": {
           "type": "datasource",
@@ -38,7 +50,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Checkpoint frequency and types",
       "fieldConfig": {
@@ -149,7 +161,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Time spent writing and syncing during checkpoints",
       "fieldConfig": {
@@ -250,7 +262,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Buffers written during checkpoints",
       "fieldConfig": {
@@ -364,7 +376,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Background writer buffer allocation and cleaning activity",
       "fieldConfig": {
@@ -465,7 +477,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Background writer halt events due to too many buffers being written",
       "fieldConfig": {
@@ -578,7 +590,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Key checkpoint metrics as single values",
       "fieldConfig": {

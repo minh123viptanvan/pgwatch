@@ -2,6 +2,18 @@
   "annotations": {
     "list": [
       {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
         "builtIn": 1,
         "datasource": {
           "type": "datasource",
@@ -38,7 +50,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Database role: Primary (0) or Replica (1)",
       "fieldConfig": {
@@ -115,7 +127,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "WAL timeline progression",
       "fieldConfig": {
@@ -222,7 +234,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "WAL location progression (bytes)",
       "fieldConfig": {
@@ -317,7 +329,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "WAL generation rate",
       "fieldConfig": {
@@ -426,7 +438,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "WAL file count and total size",
       "fieldConfig": {
@@ -550,7 +562,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Archive pending count",
       "fieldConfig": {
@@ -662,7 +674,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Key replication metrics summary",
       "fieldConfig": {

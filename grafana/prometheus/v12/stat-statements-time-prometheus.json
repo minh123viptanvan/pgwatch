@@ -2,6 +2,18 @@
   "annotations": {
     "list": [
       {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
         "builtIn": 1,
         "datasource": {
           "type": "datasource",
@@ -38,7 +50,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Total time spent in queries per second",
       "fieldConfig": {
@@ -135,7 +147,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Average query execution time",
       "fieldConfig": {
@@ -249,7 +261,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Queries consuming the most total time",
       "fieldConfig": {
@@ -456,7 +468,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Query time trends for slowest queries",
       "fieldConfig": {
@@ -552,7 +564,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Time consumption distribution by database",
       "fieldConfig": {
@@ -632,7 +644,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Queries with high variance in execution time",
       "fieldConfig": {
@@ -826,7 +838,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Current performance summary",
       "fieldConfig": {

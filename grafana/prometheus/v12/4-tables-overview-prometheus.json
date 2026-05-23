@@ -38,7 +38,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Table scan activity: sequential vs index scans",
       "fieldConfig": {
@@ -139,7 +139,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Tuple operations: inserts, updates, deletes",
       "fieldConfig": {
@@ -245,7 +245,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Live vs dead tuples ratio",
       "fieldConfig": {
@@ -346,7 +346,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Table sizes in bytes",
       "fieldConfig": {
@@ -460,7 +460,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Vacuum and analyze operations",
       "fieldConfig": {
@@ -571,7 +571,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Time spent on maintenance operations",
       "fieldConfig": {
@@ -688,6 +688,18 @@
   ],
   "templating": {
     "list": [
+      {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
       {
         "current": {
           "selected": false,

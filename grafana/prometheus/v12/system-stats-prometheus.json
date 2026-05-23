@@ -2,6 +2,18 @@
   "annotations": {
     "list": [
       {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
         "builtIn": 1,
         "datasource": {
           "type": "datasource",
@@ -38,7 +50,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "CPU utilization breakdown by type",
       "fieldConfig": {
@@ -151,7 +163,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "System load averages (1, 5, 15 minutes)",
       "fieldConfig": {
@@ -269,7 +281,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Memory usage breakdown",
       "fieldConfig": {
@@ -375,7 +387,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Swap space usage",
       "fieldConfig": {
@@ -489,7 +501,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Disk space usage",
       "fieldConfig": {
@@ -590,7 +602,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Disk I/O operations and bytes transferred",
       "fieldConfig": {
@@ -704,7 +716,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Key system resource utilization metrics",
       "fieldConfig": {

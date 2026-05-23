@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -102,7 +102,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -119,7 +119,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -177,7 +177,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(abs(pgwatch_db_stats_postmaster_uptime_s{dbname='$dbname'}))",
@@ -193,7 +193,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -248,7 +248,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -265,7 +265,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Over the selected time range",
       "fieldConfig": {
@@ -320,7 +320,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time(pgwatch_backends_longest_query_seconds{dbname='$dbname'}[$__interval]))",
@@ -335,7 +335,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -390,7 +390,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -407,7 +407,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -467,7 +467,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -484,7 +484,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -544,7 +544,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time(pgwatch_backends_waiting{dbname='$dbname'}[$__range]))",
@@ -559,7 +559,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Shared Buffers is the Postgres -managed file cache and 90%+ is what you normally want to see for best performance.",
       "fieldConfig": {
@@ -622,7 +622,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "100 * avg(increase(pgwatch_db_stats_blks_hit{dbname='$dbname'}[$__range])) / (avg(increase(pgwatch_db_stats_blks_read{dbname='$dbname'}[$__range])) + avg(increase(pgwatch_db_stats_blks_hit{dbname='$dbname'}[$__range])))",
@@ -638,7 +638,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -697,7 +697,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "100 * avg(increase(pgwatch_db_stats_xact_rollback{dbname='$dbname'}[$__range])) / (avg(increase(pgwatch_db_stats_xact_rollback{dbname='$dbname'}[$__range])) + avg(increase(pgwatch_db_stats_xact_commit{dbname='$dbname'}[$__range])))",
@@ -712,7 +712,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Transactions per Second.",
       "fieldConfig": {
@@ -765,7 +765,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "avg(rate(pgwatch_db_stats_xact_rollback{dbname='$dbname'}[$__range])) + avg(rate(pgwatch_db_stats_xact_commit{dbname='$dbname'}[$__range]))",
@@ -781,7 +781,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Transactions per Second.",
       "fieldConfig": {
@@ -834,7 +834,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": false,
           "expr": "avg(rate(pgwatch_stat_statements_calls_calls{dbname='$dbname'}[$__range]))",
@@ -850,7 +850,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Open transactions where no queries are being executed. Bad for the database health generally.",
       "fieldConfig": {
@@ -906,7 +906,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time(pgwatch_backends_idleintransaction{dbname='$dbname'}[$__range]))",
@@ -921,7 +921,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "On non-temporary  tables",
       "fieldConfig": {
@@ -974,7 +974,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "60 * avg(rate(pgwatch_db_stats_tup_inserted{dbname='$dbname'}[$__range]))",
@@ -989,7 +989,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "On non-temporary  tables",
       "fieldConfig": {
@@ -1042,7 +1042,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "60 * avg(rate(pgwatch_db_stats_tup_updated{dbname='$dbname'}[$__range]))",
@@ -1057,7 +1057,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "On non-temporary  tables",
       "fieldConfig": {
@@ -1110,7 +1110,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "60 * avg(rate(pgwatch_db_stats_tup_deleted{dbname='$dbname'}[$__range]))",
@@ -1125,7 +1125,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Percentage of rows touched by queries that are actually returned to the client. Low numbers (< 10%) for an OLTP workload can hint at missing indexes",
       "fieldConfig": {
@@ -1185,7 +1185,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "100 * avg(increase(pgwatch_db_stats_tup_fetched{dbname='$dbname'}[$__range])) / avg(increase(pgwatch_db_stats_tup_returned{dbname='$dbname'}[$__range]))",
@@ -1200,7 +1200,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -1255,7 +1255,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(pgwatch_db_size_size_b{dbname='$dbname'})",
@@ -1271,7 +1271,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -1327,7 +1327,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "avg(delta(pgwatch_db_size_size_b{dbname='$dbname'}[1d]))",
@@ -1343,7 +1343,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "WAL archiving failures can result in filled disk space",
       "fieldConfig": {
@@ -1423,7 +1423,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1440,7 +1440,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Transaction logs generation velocity.",
       "fieldConfig": {
@@ -1496,7 +1496,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(rate(pgwatch_wal_xlog_location_b{dbname='$dbname'}[$__range]))",
@@ -1511,7 +1511,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "For selected timeframe. Postgres writes temporary files to disk when sorting / grouping  big amounts of data that doesn't fit into \"work_mem\" / \"\"maintenance_work_mem\"",
       "fieldConfig": {
@@ -1567,7 +1567,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(increase(pgwatch_db_stats_temp_bytes{dbname='$dbname'}[$__range]))",
@@ -1582,7 +1582,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "For selected timeframe. Frequent sequential scans on bigger tables should usually be avoided.",
       "fieldConfig": {
@@ -1639,7 +1639,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "sum(max(increase(pgwatch_table_stats_seq_scan{dbname='$dbname',table_size_cardinality_mb=~\"3|4|5|6|7|8\"}[$__range])))",
@@ -1654,7 +1654,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Long running AUTOVACUUM processes can hint at workload or configuration  problems",
       "fieldConfig": {
@@ -1712,7 +1712,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time(pgwatch_backends_longest_autovacuum_seconds{dbname='$dbname'}[1d]))",
@@ -1727,7 +1727,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Based on db_stats.backup_duration_s  / pg_backup_start_time() [9.3+] function. N/A if no backup in progress.",
       "fieldConfig": {
@@ -1783,7 +1783,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time(pgwatch_db_stats_backup_duration_s{dbname='$dbname'}[1d]))",
@@ -1798,7 +1798,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Max. age since last VACUUM FREEZE. Could hint at problems when going into 100s of millions",
       "fieldConfig": {
@@ -1856,7 +1856,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time(pgwatch_table_stats_tx_freeze_age{dbname='$dbname'}[$__range]))",
@@ -1871,7 +1871,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "In TX. Holds back VACUUM. 1 million warning threshold",
       "fieldConfig": {
@@ -1928,7 +1928,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time({__name__=~\"(pgwatch_backends_max_xmin_age_tx|replication_slots_xmin_age_tx)\",dbname='$dbname'}[$__range]))",
@@ -1944,7 +1944,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "\"Apply\" (data made visible to queries on replica)  lag in bytes",
       "fieldConfig": {
@@ -2001,7 +2001,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(max_over_time(pgwatch_replication_replay_lag_b{dbname='$dbname'}[$__range]))",
@@ -2016,7 +2016,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Inactive repl. slots accumulate WAL files until disk space runs out. Re-animate the replica or use  pg_drop_replication_slot() to remove the slot so that Postgres can delete the un-needed WALs.",
       "fieldConfig": {
@@ -2071,7 +2071,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "exemplar": true,
           "expr": "max(pgwatch_replication_slots_non_active_int{dbname='$dbname'})",
@@ -2094,6 +2094,18 @@
   ],
   "templating": {
     "list": [
+      {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
       {
         "current": {
           "text": "demo",

@@ -50,7 +50,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -141,7 +141,7 @@
           "alias": "calls",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "rate(pgwatch_stat_statements_calls{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -156,7 +156,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -246,7 +246,7 @@
           "alias": "avg_runtime",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "rate(pgwatch_stat_statements_total_time{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -261,7 +261,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -351,7 +351,7 @@
           "alias": "avg_runtime",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "rate(pgwatch_stat_statements_total_time{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) / rate(pgwatch_stat_statements_calls{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -366,7 +366,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -458,7 +458,7 @@
           "alias": "sb_hit_ratio",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "(rate(pgwatch_stat_statements_shared_blks_hit{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) * 100) \n/\n(\n  rate(pgwatch_stat_statements_shared_blks_hit{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) \n  + \n  rate(pgwatch_stat_statements_shared_blks_read{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])\n)",
           "interval": "3m",
@@ -473,7 +473,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -563,7 +563,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "(rate(pgwatch_stat_statements_shared_blks_hit{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) * 8192)\n/\nrate(pgwatch_stat_statements_calls{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -574,7 +574,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "(rate(pgwatch_stat_statements_shared_blks_read{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) * 8192)\n/\nrate(pgwatch_stat_statements_calls{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -589,7 +589,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -680,7 +680,7 @@
           "alias": "temp_blks_read",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "rate(pgwatch_stat_statements_temp_blks_read{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) * 8192",
           "interval": "3m",
@@ -692,7 +692,7 @@
           "alias": "temp_blks_written",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "rate(pgwatch_stat_statements_temp_blks_written{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) * 8192",
           "interval": "3m",
@@ -707,7 +707,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -798,7 +798,7 @@
           "alias": "temp_blks_read",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "(rate(pgwatch_stat_statements_temp_blks_read{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) * 8192)\n/\nrate(pgwatch_stat_statements_calls{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -810,7 +810,7 @@
           "alias": "temp_blks_written",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "(rate(pgwatch_stat_statements_temp_blks_written{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) * 8192)\n/\nrate(pgwatch_stat_statements_calls{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -825,7 +825,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "FYI - blk_write_time can easily be 0 as normally changes happen only in the shared buffers and are written out by the checkpointer / background writer.",
       "fieldConfig": {
@@ -915,7 +915,7 @@
           "alias": "blk_read_time",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "rate(pgwatch_stat_statements_blk_read_time{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -927,7 +927,7 @@
           "alias": "blk_write_time",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "rate(pgwatch_stat_statements_blk_write_time{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -942,7 +942,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1033,7 +1033,7 @@
           "alias": "io_time_pct",
           "datasource": {
             "type": "prometheus",
-            "uid": "pgwatch-prometheus"
+            "uid": "${datasource}"
           },
           "expr": "(\n  rate(pgwatch_stat_statements_blk_read_time{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval]) \n  + \n  rate(pgwatch_stat_statements_blk_write_time{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])\n) * 100\n/ \nrate(pgwatch_stat_statements_total_time{dbname=\"$dbname\", queryid=\"$queryid\"}[$__rate_interval])",
           "interval": "3m",
@@ -1082,9 +1082,21 @@
   "templating": {
     "list": [
       {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
         "datasource": {
           "type": "prometheus",
-          "uid": "pgwatch-prometheus"
+          "uid": "${datasource}"
         },
         "definition": "label_values(pgwatch_stat_statements_calls, dbname)",
         "includeAll": false,
@@ -1114,7 +1126,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "pgwatch-prometheus"
+          "uid": "${datasource}"
         },
         "definition": "label_values(pgwatch_stat_statements_total_time{dbname=\"$dbname\", queryid=\"$queryid\"}, query)",
         "hide": 2,

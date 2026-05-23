@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "i.e. including indexes",
       "fieldConfig": {
@@ -89,10 +89,10 @@
       "pluginVersion": "12.0.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "max(topk($top, pgwatch_table_stats_total_relation_size_b{dbname='$dbname'})) by (table_full_name)",
           "format": "table",
@@ -124,7 +124,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "i.e. excluding indexes, but including TOAST + VM + FSM",
       "fieldConfig": {
@@ -188,10 +188,10 @@
       "pluginVersion": "12.0.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "max(topk($top, pgwatch_table_stats_table_size_b{dbname='$dbname'})) by (table_full_name)",
           "format": "table",
@@ -223,7 +223,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -288,10 +288,10 @@
       "pluginVersion": "12.0.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "editorMode": "code",
           "exemplar": true,
           "expr": "topk(3, max(delta(pgwatch_table_stats_total_relation_size_b{dbname='$dbname'}[$__interval])) by (table_full_name))",
@@ -323,7 +323,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -387,10 +387,10 @@
       "pluginVersion": "12.0.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "topk($top, max(increase(pgwatch_table_stats_seq_scan{dbname='$dbname',table_size_cardinality_mb=~\"3|4|5|6|7|8|9\"}[$__range])) by (table_full_name))",
           "format": "table",
@@ -422,7 +422,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Blocks read from file system. Note that some of those reads come from the kernel buffercache still.",
       "fieldConfig": {
@@ -486,10 +486,10 @@
       "pluginVersion": "11.4.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "8192 * topk($top, max(increase(pgwatch_table_io_stats_heap_blks_read{dbname='$dbname'}[$__range])) by (table_full_name) + max(increase(pgwatch_table_io_stats_idx_blks_read{dbname='$dbname'}[$__range])) by (table_full_name))",
           "format": "table",
@@ -521,7 +521,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "Blocks read from file system. Note that some of those reads come from the kernel buffercache still.",
       "fieldConfig": {
@@ -585,10 +585,10 @@
       "pluginVersion": "11.4.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "8192 * topk($top, max(increase(pgwatch_table_io_stats_toast_blks_read{dbname='$dbname'}[$__range])) by (table_full_name) + max(increase(pgwatch_table_io_stats_tidx_blks_read{dbname='$dbname'}[$__range])) by (table_full_name))",
           "format": "table",
@@ -620,7 +620,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -684,10 +684,10 @@
       "pluginVersion": "11.4.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "topk($top, max(increase(pgwatch_table_stats_n_tup_ins{dbname='$dbname'}[$__range])) by (table_full_name))",
           "format": "table",
@@ -719,7 +719,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -795,10 +795,10 @@
       "pluginVersion": "11.4.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "topk($top, max(increase(pgwatch_table_stats_n_tup_upd{dbname='$dbname'}[$__range])) by (table_full_name))",
           "format": "table",
@@ -830,7 +830,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "pgwatch-prometheus"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -894,10 +894,10 @@
       "pluginVersion": "11.4.0",
       "targets": [
         {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "pgwatch-prometheus"
-      },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "topk($top, max(increase(pgwatch_table_stats_n_tup_del{dbname='$dbname'}[$__range])) by (table_full_name))",
           "format": "table",
@@ -936,6 +936,18 @@
   ],
   "templating": {
     "list": [
+      {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Prometheus Datasource",
+        "multi": false,
+        "name": "datasource",
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
       {
         "current": {
           "text": "demo",
