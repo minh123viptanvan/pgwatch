@@ -1989,7 +1989,7 @@
               }
             ]
           },
-          "unit": "binB"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -2088,7 +2088,7 @@
               }
             ]
           },
-          "unit": "binB"
+          "unit": "bytes"
         },
         "overrides": []
       },
