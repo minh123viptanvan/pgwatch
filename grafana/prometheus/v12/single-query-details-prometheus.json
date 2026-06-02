@@ -41,7 +41,7 @@
           "showMiniMap": false
         },
         "content": "$sql_text",
-        "mode": "code"
+        "mode": "markdown"
       },
       "pluginVersion": "12.3.1",
       "title": "SQL",
